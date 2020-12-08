@@ -1,8 +1,7 @@
 package com.wilke.android.prime.api
 
+import com.wilke.android.prime.api.model.PrimeMeta
 import retrofit2.Call
-import retrofit2.Retrofit
-import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
 
 interface PrimeClient {

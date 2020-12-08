@@ -22,13 +22,17 @@ android {
         testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         val release = get("release")
         release.minifyEnabled(false)
         release.proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
 
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.name
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -51,12 +55,18 @@ android {
 dependencies {
 
     implementation("com.google.dagger:hilt-android:2.30.1-alpha")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.2")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.2")
     kapt("com.google.dagger:hilt-android-compiler:2.30.1-alpha")
 
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    testImplementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
     implementation("com.squareup.retrofit2:converter-jackson:2.9.0")
+
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.0")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.0")
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.20")
     implementation("androidx.core:core-ktx:1.3.2")

@@ -6,10 +6,10 @@
 *.iml
 
 # Ignore build output directory
-/build
-/release
-/libs
-/captures
+build
+release
+libs
+captures
 
 .DS_Store
 .externalNativeBuild
